@@ -3,6 +3,7 @@ import { MarvelsCharactersList } from "./ui/components/marvelsCharactersList/mar
 
 export default async function Home() {
   const data = await getMarvelsCharacters();
+
   return (
     <main>
       <MarvelsCharactersList data={data.data.results} />

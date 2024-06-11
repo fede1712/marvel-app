@@ -1,6 +1,8 @@
 import Image from "next/image";
 import SEARCH_ICON from "../../../../../public/search-icon.png";
 import { MarvelsCharacters } from "@/app/lib/interfaces/herosList";
+import { FavouritesContext } from "@/app/contexts/favouritesContext";
+import { useContext } from "react";
 
 export const SearchBar = ({
   data,
@@ -28,6 +30,7 @@ export const SearchBar = ({
       setResults(filteredResults);
     }
   };
+  const context = useContext(FavouritesContext);
 
   return (
     <div className="m-14">
@@ -40,7 +43,7 @@ export const SearchBar = ({
           onChange={(e) => handleSearch(e.target.value)}
         />
       </div>
-      <p className="text-sm">{results.length} Results</p>
+      <p className="text-sm">{!context?.showFavourites ? results.length : context?.favourites.length} Results</p>
     </div>
   );
 };
