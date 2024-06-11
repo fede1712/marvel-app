@@ -1,3 +1,8 @@
+import { Header } from "./ui/components/header/header";
 export default async function Home() {
-  return <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>;
+  return (
+    <main className="">
+      <Header favouritesLength={0} />
+    </main>
+  );
 }
