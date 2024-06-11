@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "@fontsource-variable/roboto-condensed";
+import { Header } from "./ui/components/header/header";
 
 export const metadata: Metadata = {
   title: "Marvel App",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <Header favouritesLength={0} />
+        {children}
+      </body>
     </html>
   );
 }

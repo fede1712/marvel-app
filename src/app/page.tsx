@@ -1,8 +1,11 @@
-import { Header } from "./ui/components/header/header";
+import { getMarvelsCharacters } from "./lib/data";
+import { MarvelsCharactersList } from "./ui/components/marvelsCharactersList/marvelsCharactersList";
+
 export default async function Home() {
+  const data = await getMarvelsCharacters();
   return (
-    <main className="">
-      <Header favouritesLength={0} />
+    <main>
+      <MarvelsCharactersList data={data.data.results} />
     </main>
   );
 }

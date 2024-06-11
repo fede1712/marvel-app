@@ -25,3 +25,32 @@
 body {
   font-family: 'Roboto Condensed Variable', sans-serif;
 }
+
+
+.cuted-corner {
+  position: relative;
+  background: linear-gradient(135deg, #000000 90%, transparent 10%);
+  z-index: 1;
+  cursor: pointer;
+  transition: 0.25s linear;
+}
+
+.cuted-corner:hover {
+  color: white;
+}
+
+.cuted-corner:before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(135deg, #EC1D24 90%, transparent 10%);
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.25s linear;
+}
+
+.cuted-corner:hover:before {
+  bottom: 0;
+}
