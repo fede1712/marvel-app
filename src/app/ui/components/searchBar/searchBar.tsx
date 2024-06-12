@@ -2,34 +2,19 @@ import Image from "next/image";
 import SEARCH_ICON from "../../../../../public/search-icon.png";
 import { MarvelsCharacters } from "@/app/lib/interfaces/herosList";
 import { FavouritesContext } from "@/app/contexts/favouritesContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export const SearchBar = ({
-  data,
   results,
   setResults,
-  setSearch,
-  search,
+  handleSearch,
+  setFilteredResutls,
 }: {
-  data: MarvelsCharacters[];
   results: MarvelsCharacters[];
+  setFilteredResutls: (filteredResults: MarvelsCharacters[]) => void;
   setResults: (result: MarvelsCharacters[]) => void;
-  setSearch: (search: string) => void;
-  search: string;
+  handleSearch: (query: string) => Promise<MarvelsCharacters[]>;
 }) => {
-  const handleSearch = (value: string) => {
-    setSearch(value);
-    if (search.length > 0) {
-      const filteredResults = data.filter((hero: MarvelsCharacters) => {
-        if (hero.name.toLowerCase().includes(value.toLowerCase())) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-      setResults(filteredResults);
-    }
-  };
   const context = useContext(FavouritesContext);
 
   return (
@@ -40,7 +25,7 @@ export const SearchBar = ({
           type="text"
           className="w-full border-0 outline-none"
           placeholder="Search a character..."
-          onChange={(e) => handleSearch(e.target.value)}
+          onChange={async (e) => setFilteredResutls(await handleSearch(e.target.value))}
         />
       </div>
       <p className="text-sm">{!context?.showFavourites ? results.length : context?.favourites.length} Results</p>
