@@ -11,13 +11,12 @@ export const DetailSection = ({ name, description, id }: { name: string; descrip
     <div className="flex flex-col pt-6 px-4 pb-12  align-middle lg:px-12 lg:pb-12">
       <div className="flex justify-between pb-6">
         <h2 className="uppercase text-white text-4xl">{name}</h2>
-        <button onClick={() => context?.handleFavourites(id)}>
+        <button onClick={() => context?.handleFavourites(id)} className="w-6">
           <Image
             src={context?.favourites.includes(id) ? HEART : EMPY_HEART}
             alt="Heart icon"
             width={24}
-            height={21}
-            className="min-w-6 h-5"
+            className="w-6"
           />
         </button>
       </div>

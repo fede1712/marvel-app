@@ -15,7 +15,7 @@ export default async function MarveCharacterDetails({ params }: { params: { id: 
           src={`${detailData.data.results[0].thumbnail.path}.${detailData.data.results[0].thumbnail.extension}`}
           width={320}
           height={320}
-          className="w-full lg:w-80"
+          className="w-full h-80 lg:w-80"
         />
         <DetailSection
           name={detailData.data.results[0].name}

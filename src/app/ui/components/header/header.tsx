@@ -26,8 +26,9 @@ export const Header = () => {
             }
             context?.setShowFavourites(!context.showFavourites);
           }}
+          className="w-full"
         >
-          <Image alt="Heart icon" src={HEART_ICON} width={24} />
+          <Image alt="Heart icon" src={HEART_ICON} width={24} className="h-full min-w-6 object-cover md:w-full" />
         </button>
         <p className="text-white">{context?.favourites?.length ? context?.favourites?.length : 0}</p>
       </div>

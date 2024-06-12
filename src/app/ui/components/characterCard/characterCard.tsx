@@ -32,7 +32,6 @@ export const CharacterCard = ({ name, src, id }: { name: string; src: string; id
             className="h-full min-w-6 object-cover md:w-full"
             width={100}
             height={100}
-            priority={false}
           />
         </div>
       </Link>
@@ -46,14 +45,11 @@ export const CharacterCard = ({ name, src, id }: { name: string; src: string; id
         }
       >
         <p className="text-white uppercase text-sm whitespace-nowrap overflow-hidden text-ellipsis mr-2">{name}</p>
-        <button onClick={() => context?.handleFavourites(id)}>
+        <button onClick={() => context?.handleFavourites(id)} className="min-w-3">
           <Image
             src={context?.favourites?.includes(id) ? correctHeart : EMPTY_HEART}
             alt="Heart icon"
-            width={12}
-            height={12}
-            className="min-w-3"
-            priority={false}
+            className="w-3"
           />
         </button>
       </div>
