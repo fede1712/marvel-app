@@ -6,6 +6,7 @@ import EMPTY_HEART from "../../../../../public/empty-heart.png";
 import FILL_HEART from "../../../../../public/fill-heart.png";
 import { useContext, useEffect, useState } from "react";
 import { FavouritesContext } from "@/app/contexts/favouritesContext";
+import Link from "next/link";
 
 export const CharacterCard = ({ name, src, id }: { name: string; src: string; id: number }) => {
   const [isMouseOver, setIsMouseOver] = useState(false);
@@ -23,17 +24,18 @@ export const CharacterCard = ({ name, src, id }: { name: string; src: string; id
 
   return (
     <div className="min-h-44">
-      <div className="h-48 ">
-        <Image
-          src={src}
-          alt={`${name} image`}
-          className="h-full min-w-6 object-cover md:w-full"
-          width={100}
-          height={100}
-          priority={false}
-          style={{ width: "100%", height: "auto" }}
-        />
-      </div>
+      <Link href={`/${id}`}>
+        <div className="h-48 ">
+          <Image
+            src={src}
+            alt={`${name} image`}
+            className="h-full min-w-6 object-cover md:w-full"
+            width={100}
+            height={100}
+            priority={false}
+          />
+        </div>
+      </Link>
       <div
         className="flex justify-between align-middle items-center p-4 pb-6 border-t-4 border-marvel-red cuted-corner"
         onMouseOver={() => setIsMouseOver(true)}
@@ -52,7 +54,6 @@ export const CharacterCard = ({ name, src, id }: { name: string; src: string; id
             height={12}
             className="min-w-3"
             priority={false}
-            style={{ width: "100%", height: "auto" }}
           />
         </button>
       </div>

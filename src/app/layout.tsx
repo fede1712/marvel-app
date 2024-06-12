@@ -3,6 +3,7 @@ import "./globals.css";
 import "@fontsource-variable/roboto-condensed";
 import { Header } from "./ui/components/header/header";
 import { FavoritesListProvider } from "./contexts/favouritesContext";
+import Loading from "./ui/loading";
 
 export const metadata: Metadata = {
   title: "Marvel App",
