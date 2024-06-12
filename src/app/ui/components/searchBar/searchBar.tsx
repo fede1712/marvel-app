@@ -2,17 +2,15 @@ import Image from "next/image";
 import SEARCH_ICON from "../../../../../public/search-icon.png";
 import { MarvelsCharacters } from "@/app/lib/interfaces/herosList";
 import { FavouritesContext } from "@/app/contexts/favouritesContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 export const SearchBar = ({
   results,
-  setResults,
   handleSearch,
   setFilteredResutls,
 }: {
   results: MarvelsCharacters[];
   setFilteredResutls: (filteredResults: MarvelsCharacters[]) => void;
-  setResults: (result: MarvelsCharacters[]) => void;
   handleSearch: (query: string) => Promise<MarvelsCharacters[]>;
 }) => {
   const context = useContext(FavouritesContext);

@@ -11,7 +11,7 @@ type FavouritesContextType = {
 
 export const FavouritesContext = createContext<FavouritesContextType | undefined>(undefined);
 
-export const FavoritesListProvider = ({ children }: { children: ReactNode }) => {
+export const FavouritesListProvider = ({ children }: { children: ReactNode }) => {
   const [favourites, setFavourites] = useState<number[]>([]);
   const [showFavourites, setShowFavourites] = useState(false);
 

@@ -48,7 +48,7 @@ export const CharacterCard = ({ name, src, id }: { name: string; src: string; id
         <button onClick={() => context?.handleFavourites(id)} className="min-w-3">
           <Image
             src={context?.favourites?.includes(id) ? correctHeart : EMPTY_HEART}
-            alt="Heart icon"
+            alt={context?.favourites?.includes(id) ? "Heart icon" : "Empty heart icon"}
             className="w-3"
           />
         </button>

@@ -27,12 +27,7 @@ export const MarvelsCharactersList = ({
 
   return (
     <>
-      <SearchBar
-        results={results}
-        setResults={setResults}
-        handleSearch={handleSearch}
-        setFilteredResutls={setFilteredResutls}
-      />
+      <SearchBar results={results} handleSearch={handleSearch} setFilteredResutls={setFilteredResutls} />
       <div className="grid grid-cols-2 gap-4 m-14 md:grid-cols-4 xl:grid-cols-7">
         {context?.showFavourites &&
           results?.map((hero: MarvelsCharacters) => {
