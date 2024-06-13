@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:playwright": "playwright test"
   },
   "dependencies": {
     "@fontsource-variable/roboto-condensed": "^5.0.3",
