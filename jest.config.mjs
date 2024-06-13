@@ -18,10 +18,9 @@ const jestConfig = {
     "!src/pages/_app.tsx",
   ],
   moduleNameMapper: {
+    "^next/image$": "<rootDir>/__mocks__/next/image.tsx",
     "^@components/(.*)$": "<rootDir>/src/components/$1",
-    "^@styles/(.*)$": "<rootDir>/src/styles/$1",
     "^@public/(.*)$": "<rootDir>/public/$1",
-    "^@hooks/(.*)$": "<rootDir>/src/hooks/$1",
     "^@contexts/(.*)$": "<rootDir>/src/contexts/$1",
   },
   testPathIgnorePatterns: [
