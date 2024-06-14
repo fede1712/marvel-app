@@ -72,7 +72,7 @@ npm run test:watch
 1. Run playwright test ✅:
 
 ```bash
-npm run test
+npm run test:playwright
 ```
 
 2. Open the Playwright report 📋:
